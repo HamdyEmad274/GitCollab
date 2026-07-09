@@ -76,6 +76,20 @@ namespace GitCollab
         // ProcessOrder(int orderId) method that looks up the product and
         // prints a confirmation. Commit on feature/orders.
         //
+        
+        private readonly ProductService _productService;
+        public OrderService(ProductService productService)
+        {
+            _productService = productService;
+        }
+
+        public void ProcessOrder(int orderId)
+        {
+            Console.WriteLine($"[OrderService] Processing order #{orderId}");
+            string product = _productService.GetProduct(orderId);
+            Console.WriteLine($"[OrderService] Product: {product}");
+            Console.WriteLine($"[OrderService] Done processing order #{orderId}");
+        }
         // IMPORTANT: while this branch is being built, LoggingService below
         // gets added DIRECTLY to main — that's what forces the 3-WAY MERGE
         // when feature/orders is merged afterward.
