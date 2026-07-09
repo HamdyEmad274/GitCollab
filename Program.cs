@@ -114,7 +114,7 @@ namespace GitCollab
             {
                 Console.WriteLine($"[OrderService] Processing return order #{orderId}");
                 string product = _productService.GetProduct(orderId);
-                Console.WriteLine($"[OrderService] Returned Product: {product}");
+                Console.WriteLine($"[OrderService] Returned Product Fixed: {product}");
                 Console.WriteLine($"[OrderService] Done processing return order #{orderId}");
             }
         }
