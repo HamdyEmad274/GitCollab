@@ -98,6 +98,26 @@ namespace GitCollab
         // Add a ProcessReturn(int orderId) stub here, pushed on its own
         // branch, opened as a real PR, reviewed, fix-committed, then
         // squash-merged.
+
+        public bool ValidateReturn(int orderId)
+        {
+            return orderId > 0;
+        }
+
+        public void ProcessReturn(int orderId)
+        {
+            if (!ValidateReturn(orderId))
+            {
+                Console.WriteLine($"[OrderService] Return order #{orderId} is rejected - invalid order ID.");
+            }
+            else
+            {
+                Console.WriteLine($"[OrderService] Processing return order #{orderId}");
+                string product = _productService.GetProduct(orderId);
+                Console.WriteLine($"[OrderService] Returned Product Fixed: {product}");
+                Console.WriteLine($"[OrderService] Done processing return order #{orderId}");
+            }
+        }
     }
 
     public class LoggingService
