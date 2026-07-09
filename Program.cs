@@ -54,6 +54,19 @@ namespace GitCollab
         // GetProduct(int id) lookup method here. Commit on feature/products.
         // Merge into main in Block 2 — this is the CLEAN FAST-FORWARD demo,
         // since nothing else touches main while this branch is being built.
+
+        private static readonly Dictionary<int, string> _products = new()
+        {
+            { 1, "Laptop" },
+            { 2, "Smartphone" },
+            { 3, "Tablet" }
+        };
+
+        public string GetProduct(int id)
+        {
+            return _products.TryGetValue(id, out var product) ? product : "Unknown Product";
+        }
+
     }
 
     public class OrderService
