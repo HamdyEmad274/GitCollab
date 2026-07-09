@@ -27,7 +27,7 @@ namespace GitCollab
         // Ben's branch (feature/tax-13) changes this to 0.13m.
         // Both branch from THIS exact line → triggers a real
         // merge conflict when both are merged into main.
-        public decimal CalculateTax(decimal amount) => amount * 0.14m;
+        public decimal CalculateTax(decimal amount) => amount * 0.13m;
 
         // TODO (Your Turn — Block 3):
         // feature/discount-a changes this to 0.08m
