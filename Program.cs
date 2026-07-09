@@ -92,6 +92,11 @@ namespace GitCollab
         // Add a Log(string message) method that prints a timestamped line.
         // This commit is what makes main move while feature/orders is still
         // in progress elsewhere — the exact setup for a 3-way merge.
+
+        public void Log(string message) 
+        {
+            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] LOG : {message}");
+        }
     }
 
     class Program
